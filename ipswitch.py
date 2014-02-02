@@ -103,7 +103,7 @@ for i,a in enumerate(adapters):
         if state>0:
             #i==live
             base_ip = "10.{:.0f}.{:d}.".format(team/100, team%100)
-            ipcmd = "static addr={0}{1:d} mask=255.0.0.0 gateway={0}1 gwmetric=0".format(base_ip, state_ips[state])
+            ipcmd = "static addr={0}{1:d} mask=255.255.255.0 gateway={0}1 gwmetric=0".format(base_ip, state_ips[state])
             cmd += ipcmd
         else: cmd += "dhcp"
 
